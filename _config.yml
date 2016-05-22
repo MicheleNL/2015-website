@@ -1,0 +1,16 @@
+# Site settings
+title: Michele.nl
+email: mail@michele.nl
+description: Michèle studeerde Interactieve Media (CMD) aan de Hogeschool van Amsterdam en werkt inmiddels zo'n 8 jaar bij Occhio. Sinds eind 2009 is Michèle werkzaam als senior front-end developer.
+baseurl: "" 
+url: "http://michele.nl" 
+twitter_username: michelenl
+permalink: pretty
+paginate: 4
+
+# Build settings
+markdown: kramdown
+gems:
+ - jekyll-paginate
+sass:
+  style: :compressed

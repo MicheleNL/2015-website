@@ -1,0 +1,62 @@
+/* Site footer
+----------------------------------*/
+.site-footer {
+	background: lighten($accent-color, 17%);
+	padding: 1em 0;
+
+	.front-page & {
+		background: white;
+	}
+
+	@media screen and (min-width: 30em) {
+		padding: 2em 0;
+	}
+
+	.container {
+		@media screen and (min-width: 46em) {
+			> div { 
+				width: 49%;
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			> div:nth-child(1) {
+				padding-right: 1.5rem;
+			}
+
+			> div:nth-child(2) {
+				padding-left: 1.5rem;
+
+			}
+		}
+	}
+
+	ul {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+/* Recent blogposts list
+----------------------------------*/
+ul.posts {
+	li {
+		list-style: none;
+
+		svg {		
+			margin: -0.15em 0.4em 0 0;
+			transition: margin-left 0.25s ease-out;
+		}
+		
+		&:hover svg,
+		&:focus svg {
+			margin-left: 0.3em;
+			transition: margin-left 0.1s ease-in;
+		}
+
+		a:hover,
+		a:focus {
+			color: lighten($text-color, 20%);
+		}
+	}		
+}

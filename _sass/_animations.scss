@@ -1,0 +1,21 @@
+/* CSS Keyframe animations
+--------------------------------*/
+@keyframes fade-in {
+	0%		{ opacity: 0; }
+	100%	{ opacity: 1; }
+}
+
+@keyframes highlight {
+	0%		{ color: $text-color; }
+	100%	{ color: white; }
+}
+
+@keyframes typing {
+	from 	{ width: 100%; }
+	to 		{ width: 0; }
+}
+
+@keyframes blink-caret {
+	from, to 	{ border-color: transparent; }
+	50% 		{ border-color: $text-color; }
+}

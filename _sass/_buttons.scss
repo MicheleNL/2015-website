@@ -1,0 +1,98 @@
+/* Buttons default
+--------------------------------*/
+.arrow {
+ 	fill: currentColor;
+ 	vertical-align: middle;
+ 	width: 1em;
+   	height: 0.7em;
+   	margin-left: 0.4em;
+}
+
+[role=button] {
+	background: linear-gradient(to right, $text-color 50%, $accent-color  50%) right bottom /  200% 100%;
+	display: inline-block;
+	cursor: pointer;
+	font-family: "robotobold", Arial;
+	font-size: 0.9em;
+	font-weight: 700;
+	line-height: 1;
+	margin: 0;
+	padding: 1em;
+	border: 0;
+	border-radius: 0.2em;
+	white-space: nowrap;
+	transition: background 0.2s;
+
+	.arrow {
+		position: relative;
+		z-index: 10;		
+		margin: -0.07em 0 -0.02em 0.4em;
+		transition: all 0.2s;
+	}
+
+	&.btn-light {
+		background-image: linear-gradient(to right, $text-color 50%, darken(#f1f4f8, 20%)  50%);
+	}
+}
+
+[role=button]:hover,
+[role=button]:focus {
+	background-position: left bottom;
+	color: $accent-color;
+
+	.arrow {
+		transition: all 0.2s;
+		margin-left: 1.2em;  
+	}
+}
+
+/* Buttons read more
+--------------------------------*/
+.read-more {
+	background: $gray-lighter;
+	color: $text-color;
+	font-size: 0.9em;
+	letter-spacing: 0;
+	text-transform: none;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	border-radius: 0;
+
+	span {
+		position: relative;
+		display: inline-block;
+		width: 0;
+		vertical-align: middle;
+		font-weight: 700;
+		z-index: 2;
+		overflow: hidden;
+		transition: all 0.3s;
+	}
+	
+	.arrow {
+		margin: 0 0 0 -0.25em;
+	}
+
+	&:hover,
+	&:focus {
+		color: currentColor;
+
+		span:not(.screenreader){
+			width: auto;
+		}
+	}
+}
+
+article:hover,
+article:focus {
+	.read-more {
+		span:not(.screenreader) {
+			width: auto;
+		}
+		
+		.arrow {
+			margin-left: 0.5em;
+		}
+	}
+}

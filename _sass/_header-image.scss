@@ -1,0 +1,70 @@
+/* Header image on top of page
+--------------------------------*/
+.header-image {
+	position: relative;
+	width: 100%;
+	min-height: 38vh;
+	background-color: white;
+	background-size: cover;
+	background-position: center center;
+
+   	@media screen and (min-width: 50em) {
+		min-height: 63vh;
+   	}
+
+    // bg-attachment:fixed disabled in ios bc repaints
+	@media screen and (min-width: 50em) {
+		background-attachment: fixed;
+	}
+
+	&:before {
+		content: "";
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-image: linear-gradient(135deg, rgba($text-color, 0.7) 0%, rgba(white, 0.7) 100%);
+		mix-blend-mode: multiply;
+	}
+
+    h1 {
+   		opacity: 0;
+		animation: fade-in 0.3s 0.3s forwards ease-in;
+		text-align: center;
+		max-width: 98%;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: white;
+		padding: 0;
+		margin: 0;
+		font-family: "robotoblack", Arial;
+		font-size: calc(2.5vw + 2.5vh + 1vmax);
+		line-height: 1.2;
+		text-shadow: 0 0 1em rgba($text-color, 0.5);
+
+		@media screen and (min-width: 30em) {	 
+			max-width: 85%;	
+		}
+	}
+}
+
+.header-thumbnail {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	min-height: 16em;	
+	position: relative;
+}
+
+@media screen and (min-width: 30em) {		
+	article:nth-child(1) .header-thumbnail { min-height: 18em; }
+	article:nth-child(2) .header-thumbnail { min-height: 22em; }
+	article:nth-child(3) .header-thumbnail { min-height: 16em; }
+	article:nth-child(4) .header-thumbnail { min-height: 25em; }
+	article:nth-child(5) .header-thumbnail { min-height: 23em; }	
+}

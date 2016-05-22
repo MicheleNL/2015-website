@@ -1,0 +1,16 @@
+	<header role="banner">
+		<div class="container">
+			<a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
+			<nav role="navigation">
+				<ul>
+				{% for page in site.pages %}
+					{% if page.title %}
+					<li>
+						<a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+					</li>
+					{% endif %}
+				{% endfor %}
+				</ul>
+			</nav>
+		</div>
+	</header>

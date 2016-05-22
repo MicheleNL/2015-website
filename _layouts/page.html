@@ -1,0 +1,16 @@
+---
+layout: default
+body_class: page
+---
+	<main>
+		<article>
+			{% if page.image.feature %}
+			<header class="header-image" style="background-image: url('/assets/images/{{ page.image.feature }}')">
+				<h1>{{ page.title }}</h1>
+			</header>
+			{% endif %}
+			<div class="post-content">
+				{{ content }}
+			</div>
+		</article>
+	</main>

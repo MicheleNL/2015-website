@@ -1,0 +1,19 @@
+/* Site header
+----------------------------------*/
+[role=banner] {
+	background: white;
+	box-shadow: 0 0 1em 0.3em rgba($text-color, 0.05);
+	height: 3.65em;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 99;
+}
+
+.site-title {
+	float: left;
+	font-size: 1.4em;
+	letter-spacing: -0.02em;
+	line-height: 2.55em;
+}

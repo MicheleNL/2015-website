@@ -1,0 +1,36 @@
+/* List with social media links
+----------------------------------*/
+.social-media-list {
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+
+	a {
+		display: flex;
+		align-items: center;
+		color: $text-color;
+		height: 1em;
+		width: 1em;
+		margin: 0 1em 0 0;
+		transition: border 0.3s ease-out;
+		overflow: hidden; // fixes overflowing ios
+
+		&:hover,
+		&:focus {
+		}
+	}
+
+	svg {
+		width: 100%;
+		height: auto;
+		max-height: 1em;
+	}
+}
+
+/* Share on Twitter button
+----------------------------------*/
+.share {
+	text-align: center;
+	padding-top: 2.3em;
+}

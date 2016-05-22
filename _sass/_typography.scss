@@ -1,0 +1,181 @@
+/* Typography vertical rythm
+--------------------------------*/
+body {
+	font-size: 1.1em;
+	line-height: 1.625; 
+	font-weight: 300;
+	color: $text-color;
+	-webkit-text-size-adjust: 100%;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "kern" on;
+	font-family: "karlaregular", Arial;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+	font-family: "robotobold", Arial;
+}
+
+h1 {	
+	font-size: 2.75em;
+	line-height: 1.363636365em;
+	margin-top: 0.90909091em;
+	margin-bottom: 0.45454546em;
+	margin-bottom: 0.90909091em;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+}
+
+h2 {
+	font-size: 1.4375em;
+	font-weight: 700;
+	line-height: 1.29032258em;
+	margin-top: 1.29032258em;
+	margin-bottom: 0.64516129em;
+}
+
+h2 a:hover,
+h2 a:focus {
+	color: lighten($text-color, 10%);
+} 
+
+h3 {
+	font-weight: 600;
+	font-size: 1.275em;
+	line-height: 1.818181818em;
+	margin-top: 0.90909091em;
+	margin-bottom: 0.40404041em;
+}
+
+h4, h5, h6, blockquote {
+	font-size: 1em;
+	line-height: 1.25em;
+	margin-top: 1.25em;
+	margin-bottom: 1.25em;
+}
+
+h5 {
+	font-style: italic;
+}
+
+h6 {
+	text-decoration: underline;
+}
+
+p, ul, ol, pre, table {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+ul ul, ol ol, 
+ul ol, ol ul {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+ul {
+	list-style-position: inside;
+	padding-left: 0.2em;
+}
+
+ol {
+	list-style-position: inside;
+	padding-left: 0;
+}
+
+strong, em, small, code, pre {
+	line-height: 1;
+}
+
+/* Elements
+------------------------------*/
+a {
+	color: $text-color;
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		color: $accent-color;
+		text-decoration: inherit;
+	}
+}
+
+p a:not(.btn) {
+	border-bottom: 0.13rem solid $accent-color;
+	background: linear-gradient(to right, lighten($accent-color, 22%) 50%, transparent  50%) right bottom / 200% 100%;
+	color: $text-color;
+	padding: 0 0.1em;
+	transition: background 0.34s ease-in;
+
+	&:hover,
+	&:focus {
+		background-position: left bottom;	
+	    transition: background 0.15s ease-out;
+	}
+}
+
+strong {
+	font-weight: 600;
+}
+
+blockquote {
+	padding: 1.2em 1em 1em 1em;
+	margin-left: 0;
+	margin-right: 0;
+	font-weight: 400;
+	line-height: inherit;
+	text-align: center;
+	display: inline-block;
+	background: #f3f6fa;
+	position: relative;
+	width: 100%;
+
+	&:before {
+		content: '\201C';
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		font-size: 3em;
+		line-height: 1.6em;
+		color: $accent-color;
+		position: absolute;
+		background: white;
+		border-radius: 50%;
+		left: 50%;
+		top: 0;
+		font-family: Arial;
+		font-weight: 300;
+		margin-top: -0.62em;
+		margin-left: -0.5em;
+		text-align: center;	
+	}
+	
+	p {
+		margin: 0;
+	}
+
+	em {
+		font-weight: 600;
+	}
+}
+
+img,
+embed,
+iframe {
+	width: 100%;
+	height: auto; 
+}
+
+embed,
+iframe {
+	min-height: 30em;
+}
+
+cite {
+	font-style: normal;
+
+	a {
+		color: $text-color;
+	}
+}

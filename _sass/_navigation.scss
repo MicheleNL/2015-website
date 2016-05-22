@@ -1,0 +1,32 @@
+/* Site navigation
+----------------------------------*/
+[role=navigation]{
+    float: right;
+    line-height: 3.4em;
+
+    ul {
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+        display: inline-block;
+
+        &:not(:first-child) {
+            margin-left: 2em;
+        }
+    }
+
+    a {
+        font-weight: 600;
+        color: $text-color;
+        border-bottom: 0.15em solid $accent-color;
+        transition: all 0.2s;
+        padding-bottom: 0.1em;
+
+        &:hover,
+        &:focus {
+            padding-bottom: 0.3em;
+        }
+    }
+}

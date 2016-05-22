@@ -1,0 +1,122 @@
+/* Front-page
+----------------------------------*/
+.front-page  {
+	padding-top: 5em;	
+	background: $gray-lighter;
+	box-shadow: inset 0 85vh 0 0 white; 
+
+	@media screen and (min-width: 30em) {
+		box-shadow: inset 0 65vh 0 0 white; 
+		padding-top: 7em;	
+	}	
+
+	h1 {
+		margin: 0 0 0.3em 0;
+		font-size: calc(2.2vw + 2.2vh + 1vmin);
+		letter-spacing: 0.01em;
+		text-transform: none;
+	}
+
+	> .container > header {
+		margin-left: 0.65em;
+
+		@media screen and (min-width: 30em) {
+			margin: 1em 0;
+			color: $text-color;
+			text-align: center;
+		}
+	}
+}
+
+/* Front-page columns
+----------------------------------*/
+.front-page main {
+	column-count: 1;
+	column-gap: 3em;
+
+	@media screen and (min-width: 43em) {	
+		column-count: 2;
+	}
+
+	@media screen and (min-width: 110em) {	
+		column-count: 3;
+	}
+
+	article {
+		background: white;
+		width: 100%;
+		display: inline-block; 
+		margin: 0.32em 0;
+		min-height: 10em;
+		column-break-inside:avoid;
+		page-break-inside: avoid;
+		break-inside: avoid;	
+		position: relative;
+
+		@media screen and (min-width: 30em) {		
+			margin: 1.5em 0;
+		}
+	}
+
+	h2 {
+		margin-top: 0;
+		font-weight: 600;
+		
+		a {
+			position: relative;
+		}
+
+		span {
+			content: '(ongelezen)';
+			color: $accent-color;
+			display: inline-block;
+			font-size: .6em;
+			vertical-align: middle;
+  		}
+
+  		:visited span {
+			color: white;
+		}
+	}
+
+	header {
+		padding: 2em 1em 3.5em 1em;
+
+		@media screen and (min-width: 30em) {		
+			padding: 2em 2em 3.5em 2em;
+		}
+	}
+
+}
+
+/* Typing header 
+----------------------------------*/
+h2.typing {
+	position: relative;
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	letter-spacing: 0;
+	font-family: "ubuntu_monoregular", Courier;
+
+	@media screen and (min-width: 30em) {
+		margin: 0 0 1em 0;
+	}
+
+	span {
+		display: none;
+	
+		@media screen and (min-width: 43em) {
+			position: absolute;
+			display: block;
+			top: 0;
+			right: 0;
+			width: 0;
+			background-clip: inherit;
+			background-color: white; //$body-bg-color;
+			z-index: 4;
+			border-left: 0.1em solid $text-color;
+			animation: typing 2s steps(30, end), blink-caret 1s step-end infinite;
+		}
+	}
+}
