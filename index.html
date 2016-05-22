@@ -6,49 +6,50 @@ image:
   thumb: thumbnail-image.jpg 
 ---
 	<div class="container">
-			<header> 
-				<h1>Michèle <span>van den Aardweg</span></h1>
-				<h2 class="typing">Cat loving front-end developer<span aria-hidden="true">&nbsp;</span></h2>
-			</header>
-			<main>
-				<nav class="categories">
-					<ul class="category-list" aria-label=">Kies een categorie">
-					{% for category in site.categories %}
-						<li>
-							<a role="button" href="/categories/#{{ category | first }}">{{ category | first }}
-							</a>
-						</li>
-					{% endfor %}
-					</ul>
-				</nav>
+		<header> 
+			<h1>Michèle <span>van den Aardweg</span></h1>
+			<h2 class="typing">Cat loving front-end developer<span aria-hidden="true">&nbsp;</span></h2>
+		</header>
+		<main>
+			<nav class="categories">
+				<ul class="category-list" aria-label=">Kies een categorie">
+				{% for category in site.categories %}
+					<li>
+						<a role="button" href="/categories/#{{ category | first }}">{{ category | first }}				</a>
+					</li>
+				{% endfor %}
+				</ul>
+			</nav>
 				
-				{% for post in paginator.posts  %}	
-				<article>
-					{% if post.image.thumbnail %}
-					<a class="header-thumbnail" style="background-image: url('/assets/images/{{ post.image.thumbnail }}')" aria-hidden="true" href="{{ post.url }}">
-						<span class="screenreader">Link naar het artikel genaamd: {{ post.title }}</span>
-					</a>
-					{% endif %}
+			{% for post in paginator.posts  %}	
+			<article>
+				{% if post.image.thumbnail %}
+				<a class="header-thumbnail" style="background-image: url('/assets/images/{{ post.image.thumbnail }}')" aria-hidden="true" href="{{ post.url }}">
+					<span class="screenreader">Link naar het artikel genaamd: {{ post.title }}</span>
+				</a>
+				{% endif %}
 
-					<header>
-						<p class="category-list">
-							<span class="screenreader">Dit is een artikel in de categorie</span>
-							{{ post.categories | join: ', ' }}
-						</p>
-						<h2><a href="{{ post.url }}">{{ post.title }} <span aria-hidden="true">(ongelezen)</span></a></h2>
-					</header>
-					<a class="read-more" role="button" href="{{ post.url }}">
-						<span class="screenreader">Lees het hele artikel</span>
-						<span aria-hidden="true">Lees verder</span>
-					</a>
-				</article>{% endfor %}
-			</main>
+				<header>
+					<p class="categories">
+						<span class="screenreader">Dit is een artikel in de categorie</span>
+						{{ post.categories | join: ', ' }}
+					</p>
+					<h2><a href="{{ post.url }}">{{ post.title }} <span aria-hidden="true">(ongelezen)</span></a></h2>
+				</header>
+				<a class="read-more" role="button" href="{{ post.url }}">
+					<span class="screenreader">Lees het hele artikel</span>
+					<span aria-hidden="true">Lees verder</span>
+				</a>
+			</article>
+			{% endfor %}
+		</main>
+	</div>
+	{% if paginator.total_pages > 1 %}
+	<nav class="page-navigation">
+		<div class="container">{% for page in (1..paginator.total_pages) %}{% if page == paginator.page %}
+			<span class="page-count current"><span class="screenreader">Je bevind je nu op pagina</span>{{ page }}</span>{% elsif page == 1 %}
+			<a class="page-count" href="/"><span class="screenreader">Ga naar pagina</span>{{ page }}</a>{% else %}
+			<a class="page-count" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"><span class="screenreader">Ga naar pagina</span> {{ page }}</a>{% endif %}{% endfor %}
 		</div>
-	   {% if paginator.total_pages > 1 %}
-		<nav class="page-navigation">
-			<div class="container">{% for page in (1..paginator.total_pages) %}{% if page == paginator.page %}
-				<span class="page-count current"><span class="screenreader">Je bevind je nu op pagina</span>{{ page }}</span>{% elsif page == 1 %}
-				<a class="page-count" href="/"><span class="screenreader">Ga naar pagina</span>{{ page }}</a>{% else %}
-				<a class="page-count" href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}"><span class="screenreader">Ga naar pagina</span> {{ page }}</a>{% endif %}{% endfor %}
-			</div>
-		</nav>{% endif %}
+	</nav>
+	{% endif %}
