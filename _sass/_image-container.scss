@@ -1,5 +1,5 @@
-/* Big images in content
-------------------------------*/
+/* Big images & captions in content
+-------------------------------------*/
 .image-container,
 .caption {
 	position: relative;
@@ -23,7 +23,7 @@
 }
 
 p {
-	position: relative;
+	position: relative; // needs to be rel for pos. abs. children
 }
 
 img.full-width {
@@ -60,6 +60,7 @@ img.full-width {
 /* Image captions
 ----------------------------------*/
 .caption {
+	// position below image when screen is bigger
 	position: relative;
 	background: $accent-color;
 	font-weight: 400;
@@ -70,6 +71,7 @@ img.full-width {
 	margin: -1.65em 0 -1em 0;
 
 	@media screen and (min-width: 30em) {
+		// position on top of image when screen is bigger
 		max-width: 40%;
 		position: absolute;
 		bottom: 5em;
