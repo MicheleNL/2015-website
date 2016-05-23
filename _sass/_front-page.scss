@@ -113,7 +113,7 @@ h2.typing {
 			right: 0;
 			width: 0;
 			background-clip: inherit;
-			background-color: white; //$body-bg-color;
+			background-color: white;
 			z-index: 4;
 			border-left: 0.1em solid $text-color;
 			animation: typing 2s steps(30, end), blink-caret 1s step-end infinite;
