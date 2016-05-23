@@ -9,7 +9,7 @@
 
 		@media screen and (min-width: 30em) {	
 			margin: 2em 0;
-
+			
 			&.border {
 				border: 0.25em solid white;
 			}
@@ -39,7 +39,8 @@ img.full-width {
 
 .image-container {
 	transition: margin 0.15s ease-out;
-
+	
+	// neg margins to pull out image
 	@media screen and (min-width: 30em) {
 		margin-left: -1em;  
 		margin-right: -1em; 
