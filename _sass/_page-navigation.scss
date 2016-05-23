@@ -5,6 +5,7 @@
 	flex-direction: row;
 	background: #f1f4f8;
 	
+	// flex the page nav items 
 	> span,
 	> a {
 		flex: 1 1 50%;
@@ -57,7 +58,8 @@
 	transition: 0.2s ease-out;
 	font-weight: 600;
 	border-radius: 0.2em;
-
+	
+	// style the active indicator
 	&.current {
 		background-color: $accent-color;
 		color: $gray-light;
