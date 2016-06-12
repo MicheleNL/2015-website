@@ -14,7 +14,7 @@
 	cursor: pointer;
 	font-family: "robotobold", Arial;
 	font-size: 0.9em;
-	font-weight: 700;
+	font-weight: normal;
 	line-height: 1;
 	margin: 0;
 	padding: 1em;
@@ -64,7 +64,6 @@
 		display: inline-block;
 		width: 0;
 		vertical-align: middle;
-		font-weight: 700;
 		z-index: 2;
 		overflow: hidden;
 		transition: all 0.3s;

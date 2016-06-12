@@ -19,7 +19,6 @@ body.categories {
 
 	h2 {
 		text-transform: capitalize;
-		font-weight: 600;
 		padding-top: 1em;
 		
 		&:target {
@@ -62,13 +61,16 @@ dl.category-list {
 		font-size: 0.8em;
 		padding-left: 1rem;
 		border-left: 0.4rem solid rgba($accent-color, 0.3);
-		font-weight: 600;
 	}
 
 	dd {
 		margin-bottom: 1em;
 		padding-left: 1rem;
 		border-left: 0.4rem solid rgba($accent-color, 0.3);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 
 		a {
 			color: $accent-color;
@@ -95,11 +97,11 @@ ul.category-list {
 	
 	[role=button] {
 		text-transform: capitalize;	
-		background: linear-gradient(to right, white 50%, lighten($accent-color, 10%) 50%) right bottom /  200% 100%;
+		background: linear-gradient(to right, white 50%, lighten($accent-color, 10%) 50%) 100% 0 /  200% 100%;
 
  		&:hover,
  		&:focus {
- 			background-position: left bottom;
+ 			background-position: 0 0;
  			color: $text-color;
  		}
 	}
